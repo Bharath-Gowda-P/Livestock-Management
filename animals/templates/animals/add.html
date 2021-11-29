@@ -1,0 +1,89 @@
+{% extends "main.html" %}
+
+{% block title %}
+Add Animal
+{% endblock title %}
+
+{% block body %}
+
+<nav class="navbar navbar-expand-sm navbar-responsive bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="/home">Livestock</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="/add">Add Animal</a>
+        </li>
+        </ul>
+        <ul class="navbar-nav">
+               <style>
+            .navbar-nav{
+                margin-left: auto;
+            }
+            </style>
+       <div class="d-flex">
+        <li class="nav-item">
+          <a class="nav-link" href="/logout">LOGOUT</a>
+          </div>
+      </ul>
+    </div>
+  </div>
+</nav>
+<br>
+<br>
+
+<div class="container my-5">
+<form method="POST" action=" "> 
+{% csrf_token %}
+<div class="mb-3 container b-flex p-2">
+  <label  class="form-label">Animal Number</label>
+  <input type="text" class="form-control" id="aid" name="aid">
+</div>
+<div class="mb-3 container b-flex p-2">
+  <label  class="form-label">Animal</label>
+  <input type="text" class="form-control" id="aclass" name="aclass">
+</div>
+<div class="mb-3 container b-flex p-2">
+<label class="form-label">Sex</label>
+<select class="form-select" id="sex" name="sex">
+<option selected>Select</option>
+  <option value="Male">Male</option>
+  <option value="Female">Female</option>
+</select>
+</div>
+<div class="mb-3 container b-flex p-2">
+  <label  class="form-label">Weight</label>
+  <input type="text" class="form-control" id="weight" name="weight">
+</div>
+<div class="mb-3 container b-flex p-2">
+  <label  class="form-label">Insurance Validity</label>
+  <input type="date" class="form-control" id="insurance" name="insurance">
+</div>
+<div class="mb-3 container b-flex p-2">
+<label class="form-label">Vaccination Status</label>
+<select class="form-select" id="vstatus" name="vstatus">
+<option selected>Select</option>
+  <option value="Done">Done</option>
+  <option value="Pending">Pending</option>
+</select>
+</div>
+<div cl
+<div class="mb-3 container b-flex p-2">
+  <label  class="form-label">Special ID</label>
+  <input type="text" class="form-control" id="vdate" name="vdate">
+</div>
+<div class="mb-3 container b-flex p-2">
+  <label  class="form-label">Last Doctor Visit</label>
+  <input type="date" class="form-control" id="ddate" name="ddate">
+</div>
+<div class="mb-3 container b-flex p-2">
+<button type="submit" class="btn btn-lg btn-success bg-gradient">Add Animal</button>
+<a class="btn btn-lg btn-danger bg-gradient" href="/home" role="button">Cancel</a>
+</div>
+</form>
+<div>
+
+{% endblock body %}

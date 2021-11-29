@@ -1,0 +1,87 @@
+{% extends "main.html" %}
+
+{% block title %}
+HOME
+{% endblock %}
+
+{% block body %}
+<nav class="navbar navbar-expand-sm navbar-responsive bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand" href=" ">Livestock</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="/add">Add Animal</a>
+        </li>
+        </ul>
+        <ul class="navbar-nav">
+               <style>
+            .navbar-nav{
+                margin-left: auto;
+            }
+            </style>
+       <div class="d-flex">
+        <li class="nav-item">
+          <a class="nav-link" href="/logout">LOGOUT</a>
+          </div>
+      </ul>
+    </div>
+  </div>
+</nav>
+<br>
+<br>
+<table class="table table-striped table-responsive">
+  <thead>
+    <tr>
+      <th scope="col">Animal Number</th>
+      <th scope="col">Animal Type</th>
+      <th scope="col">Sex</th>
+      <th scope="col">Weight(KG)</th>
+      <th scope="col">Insurance Validity</th>
+      <th scope="col">Vaccination Status</th>
+      <th scope="col">Special ID</th>
+      <th scope="col">Last Doctor Visit</th>
+      <th scope="col">Modifications</th>
+    </tr>
+  </thead>
+  {% for D in data %}
+  <!-- {% for i in range(9): 
+      i %} -->
+  <tr>
+    <td scope="col">{{D.id}}</td>
+    <td scope="col">{{D.aclass}}</td>
+    <td scope="col">{{D.sex}}</td>
+    <td scope="col">{{D.weight}}</td>
+    <td scope="col">{{D.insurance}}</td>
+    <td scope="col">{{D.vacstatus}}</td>
+    <td scope="col">{{D.vdate}}</td>
+    <td scope="col">{{D.ddate}}</td>
+      <td>
+          <a class="btn btn-danger bg-gradient" href="{% url 'delete' D.id %}" role="button">Delete</a></td>
+          </tr>
+  </tr>
+
+  {% endfor %}
+
+  <tbody>
+    
+  </tbody>
+</table>
+<style>
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  color: black;
+  text-align: center;
+}
+</style>
+
+<div class="footer">
+  <p>Copyrights: CodingMonks 2021</p>
+</div>
+{% endblock body %}
